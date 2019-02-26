@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="24px" viewBox="0 0 26 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>trophy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main" transform="translate(-992.000000, -656.000000)">
+            <g id="Group-23" transform="translate(100.000000, 638.000000)">
+                <g id="Group-22">
+                    <g id="Group-21" transform="translate(730.000000, 0.000000)">
+                        <g id="trophy" transform="translate(163.000000, 18.000000)">
+                            <path d="M4,1 L20,1" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12,17 L14,17 C14,17 20,11 20,5 L20,1 L12,1 L12,17 Z" id="Path" fill="#000000"></path>
+                            <path d="M17,23 L7,23 L7,21 C7,19.895 7.895,19 9,19 L15,19 C16.105,19 17,19.895 17,21 L17,23 Z" id="Path" fill="#000000"></path>
+                            <path d="M7,23 L17,23" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M18,9 C18,9 19,5 21.5,5 C22.881,5 24,6.119 24,7.5 C24,11 14,14 14,14" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12,17 L10,17 C10,17 4,11 4,5 L4,1 L12,1 L12,17 Z" id="Path" fill="#000000"></path>
+                            <path d="M6,9 C6,9 5,5 2.5,5 C1.119,5 0,6.119 0,7.5 C0,11 10,14 10,14" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

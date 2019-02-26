@@ -1,0 +1,22 @@
+/* --------------------------------------------------- /
+/*                      1000                           */
+/* ___________________________________________________*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700") screen and (max-width: 800px);
+
+@media only screen and (max-width: 1000px) {
+    .white-box {
+        background-image: none;
+        background-color: #fff;
+    }
+    .stage-work .stage1,
+    .stage-work .stage2,
+    .stage-work .stage3,
+    .stage-work .stage4,
+    .stage-work .stage5 {
+    padding: 0;
+    padding-top: 50px;
+    }
+    .stage-work .stage-text {
+        width: 100%;
+    }
+}

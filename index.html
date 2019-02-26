@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru"
+      data-ng-app="isteward"
+      data-ng-controller="IndexPageController as main">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="favicon.ico" type=image/x-icon rel=icon>
+
+    <title data-ng-bind="page.title">iSteward</title>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="o2wZwkvGK48VHyJnJ-acVkeaI4PDX0sRyOVz941S71TGNUqvPrRe_zhRUi1Gn9hlF_1r6a0NeUWdoAm7oGKHGg==">
+    <meta name="description" content="">
+<meta name="keywords" content="">
+<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/css/ngDialog.min.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/css/ngDialog-theme-default.min.css" rel="stylesheet">
+<link href="css/00-reset.css" rel="stylesheet">
+<link href="css/01-frontend.css" rel="stylesheet">
+<link href="css/03-frontend_adaptive.css" rel="stylesheet">
+<script src="app/config.js"></script></head>
+<body>
+
+<div data-ng-class="{'top-bg': !isRouteActive('/events')}" id="wrapper">
+<header class="top-site float"><meta name="yandex-verification" content="21daadc601851751" />
+<div class="wrap" data-ng-cloak=""><a class="logo" data-ng-href="{{::main.config.homeUrl}}" href="/">&nbsp;</a>
+<div class="top-site__bar active anonymous ng-hide" data-ng-hide="user.login"><button class="btn--trans" data-ng-click="main.openLogin('Вход в систему')">Вход в систему</button>
+<div class="top-site__phone">
+<p class="text">Контакный номер:</p>
+<a class="number" href="tel:+78432167045">+7&nbsp;(843)&nbsp;216 70 45</a></div>
+</div>
+<!-- /top-site__bar -->
+
+<div class="top-site__bar active ng-hide" data-ng-show="user.login"><button class="btn-logout" data-ng-click="main.logout()">Выход</button>
+
+<div class="profile">
+<div class="img-wr"><img alt="user avatar" data-ng-src="{{form.avatar_url}}" src="img/avatar-empty.jpg" /></div>
+
+<div class="profile__text">
+<p class="profile__name"><a data-ng-bind-template="{{form.first_name}} {{form.last_name}}" href="/cabinet.html#/events">&nbsp;</a></p>
+
+<p class="form__status" data-ng-bind="form.status_label">&nbsp;</p>
+</div>
+</div>
+<!-- /profile --></div>
+<!-- /top-site__bar --></div>
+<!-- /wrap --></header>
+<!-- /top-site --><a class="logo--page" data-ng-href="{{::main.config.homeUrl}}" href="/">&nbsp;</a>
+
+<div class="intro" data-ng-hide="!isRouteActive('/events')"><a class="btn-action green" data-ng-hide="user.login" href="#/signup">Начать работу</a>
+
+<div class="carousel-box" data-is-carousel="" data-is-cycle-direction="ltr" data-is-scrolling-time="0.5" data-is-viewing-time="5">
+<div class="scene">
+<div class="filmstrip">
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s2_l8v1a_85o0d.jpg')">
+<div class="slide-content">
+<h2 class="title">Зарабатывайте в любое удобное время</h2>
+
+<p class="text">Сервис позволяет самостоятельно подбирать мероприятия, помогая сделать график работы удобным и индивидуальным</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s5_om9ub_SA0HP.jpg')">
+<div class="slide-content">
+<h2 class="title">Развивайтесь вместе с нами</h2>
+
+<p class="text">Каждое мероприятие &minus; отличная практика для ваших навыков общения и лидерских качеств.</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s4_5lv9q_izm14.jpg')">
+<div class="slide-content">
+<h2 class="title">Посещайте топовые мероприятия бесплатно</h2>
+
+<p class="text">Посетить международные матчи и турниры становится проще, если ты сам - организатор события!</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s3_f5ch5_2CvGe.jpg')">
+<div class="slide-content">
+<h2 class="title">Быть стюардом - быть профессионалом</h2>
+
+<p class="text">Специальная программа подготовки позволяет получить уникальные знания в области организации безопасности масштабных мероприятий</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s1_rshkw.jpg')">
+<div class="slide-content">
+<h2 class="title">Комфорт и безопасность - наша заслуга</h2>
+
+<p class="text">В программе подготовки реализованы европейские стандарты качества сервиса и безопасности.</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s6_cnxu3.jpg')">
+<div class="slide-content">
+<h2 class="title">От стажера до руководителя один шаг</h2>
+
+<p class="text">Программа профессиональной переподготовки доступна с первого шага &nbsp;&minus; теперь стать лидером команды может каждый.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="indicators"><span class="default" data-ng-class="{'active': $parent.$parent.currentIndex==slideIndex}" data-ng-repeat="(slideIndex, s) in $parent.sliders"></span></div>
+
+<div class="is-carousel-controls"><span class="is-carousel-control is-carousel-control-prev" data-ng-click="$parent.previousSlide()"></span> <span class="is-carousel-control is-carousel-control-next" data-ng-click="$parent.nextSlide()"></span></div>
+</div>
+</div>
+<!-- /intro -->
+
+<div class="wrap margin-up">
+    <div class="page-buttons three">
+                    <a href="/content/info/fifa2018.html"
+               class="item ">
+                <span class="icon st-1"></span>
+
+                <span class="title">Спортивные мероприятия</span>
+            </a>
+                    <a href="/content/info/stagework.html"
+               class="item ">
+                <span class="icon st-2"></span>
+
+                <span class="title">Этапы работы</span>
+            </a>
+                    <a href="/content/info/callback.html"
+               class="item ">
+                <span class="icon st-3"></span>
+
+                <span class="title">Наши проекты</span>
+            </a>
+            </div>
+    <!-- /page-buttons -->
+<!-- /page-buttons -->
+<div class="benefit">
+    <h4 class="benefit-title">Преимущества работы стюардом:</h4>
+    <div class="benefit-card">
+        <div class="benefit-item">
+            <div class="benefit-name-img">
+                <h3 class="benefit-name">Опыт</h3>
+                <img src="img/graduation_cap.svg" alt="Шапка">
+            </div>
+            <p class="benefit-descriprion">Ты получаешь бесценный опыт работы на международном мероприятии, находясь в самом центре всех событий. Такое точно захочется написать в резюме.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-name-img">
+                <h3 class="benefit-name">Команда</h3>
+                <img src="img/people.svg" alt="Шапка">
+            </div>
+            <p class="benefit-descriprion">Рядом с тобой на каждом мероприятии находится тысяча твоих коллег. У каждого из них одна общая цель. Ощущение этого единства – бесценно.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-name-img">
+                <h3 class="benefit-name">Заработок</h3>
+                <img src="img/paper_money.svg" alt="Шапка">
+            </div>
+            <p class="benefit-descriprion">Работа на любом спортивном мероприятии требует высокой отдачи. И за такую работу мы платим соответствующе. Доказано.</p>
+        </div>
+    </div>
+    <div class="benefit-line">
+        <img src="img/1line.svg" alt="Линия">
+    </div>
+</div>
+<div class="advantages">
+    <div class="advantages-item">
+        <div class="advantages-description">
+            <h2 class="advantages-title">Кто такие стюарды?</h2>
+            <p class="advantages-intro">Любое официальное спортивное соревнование требует профессиональной подготовки и участия специалистов из разных сфер. Одно из направлений при проведении таких мероприятий – работа контрольно-распорядительной службы или службы стюардов. Стюарды проходят специальную подготовку и получают за свою работу деньги. Именно они первыми встречают гостей и участников на входе, помогают в осмотре зрителей, осуществляют навигацию по объекту, следят за соблюдением общественного порядка и безопасности и выполняют ряд других задач, порой незаметных для остальных.</p>
+        </div>
+        <div class="advantages-img">
+            <img src="img/advantages1.jpg" alt="Промо фото">
+        </div>
+    </div>
+    <div class="advantages1-line">
+        <img src="img/2line.svg" alt="Линия">
+    </div>
+    <div class="advantages-item">
+        <div class="advantages-description">
+            <h2 class="advantages-title">Что нужно делать?</h2>
+            <p class="advantages-intro">В задачи стюарда на спортивном мероприятии входит:</p>
+            <ul>
+                <li>Осмотр граждан и их личных вещей при входе на спортивный объект</li>
+                <li>Помощь в навигации для гостей и участников мероприятий</li>
+                <li>Контроль за соблюдением общественного порядка и безопасности</li>
+                <li>Проверка пропускных документов</li>
+                <li>Контроль за движением транспорта на прилегающей территории</li> 
+                <li>Контроль за перемещением гостей и участников мероприятий</li>
+            </ul>
+        </div>
+        <div class="advantages-img">
+            <img src="img/advantages2.jpg" alt="Промо фото">
+        </div>
+    </div>
+    <div class="advantages2-line">
+        <img src="img/3line.svg" alt="Линия">
+    </div>
+    <div class="advantages-item">
+        <div class="advantages-description">
+            <h2 class="advantages-title">Об организаторе</h2>
+            <p class="advantages-intro">С 2015 года компания Спорт-Гард готовит сотрудников контрольно-распорядительной службы для работы на различных спортивных мероприятиях: от городских до мировых чемпионатов и соревнований. За плечами компании успешный опыт работы на XVI Чемпионате мира FINA и MASTERS в 2015 году, чемпионатах мира, Европы и России по различным видам спорта. В 2017 и в 2018 году Спорт-Гард подготовил более 2500 стюардов для работы на Кубке Конфедераций FIFA и Чемпионате мира FIFA по футболу. <br>
+                    Обучение будущих стюардов проводят квалифицированные сотрудники силовых ведомств, юристы, спасатели, медики и психологи.</p>
+        </div>
+        <div class="advantages-img">
+            <img src="img/advantages3.jpg" alt="Промо фото">
+        </div>
+    </div>
+    <div class="advantages3-line">
+        <img src="img/4line.svg" alt="Линия">
+    </div>
+</div>
+<div data-ng-view="" onload="setTitle(panel.title)">&nbsp;</div>
+</div>
+<!-- /wrap -->
+
+<div class="google-play ng-hide" data-ng-controller="LatestVersionCtrl as software" data-ng-show="showBlock &amp;&amp; isRouteActive('/events')">
+<div class="wrap" data-ng-cloak="">
+<h2 class="title">Мобильное приложение ISTEWARD позволит вам всегда быть в курсе новых спортивных событий!</h2>
+
+<p class="text">Теперь стать контролером-распорядителем (стюардом)&nbsp;просто &ndash; заполняйте анкету и оставляйте заявку на собеседование! Удобный и простой интерфейс, расширенные функции, возможность делиться с друзьями ссылками на мероприятия &ndash; мы сделали все, чтобы стюарды стали еще мобильнее.<br />
+<br />
+Все масштабные мероприятия в вашем телефоне &ndash; зарабатывайте в удобное для вас время!</p>
+<a href="#" class="gp-btn">
+    <div class="img">
+        <img src="img/google-play.png" alt="">
+    </div>
+    <div class="description">
+        <p>Доступно в</p>
+        <p>Google Play</p>
+    </div>
+</a>
+<!-- <a class="google-play__link" data-ng-href="{{::android.url}}" target="_blank">Загрузить последнюю версию {{::android.version}} для Android</a> -->
+
+<p class="text ng-hide">Контрольная сумма SHA256:<br />
+<code style="word-wrap: break-word">{{::android.check_sum}}</code></p>
+</div>
+</div>
+</div>
+
+<footer class="bottom-site">
+<div class="wrap"><a class="logo" href="/">&nbsp;</a>
+
+<div class="top-site__bar active anonymous" data-ng-hide="user.login"><a class="btn--trans" data-ng-click="main.openLogin('Вход в систему')" href="#">Вход в систему</a>
+
+<div class="top-site__phone">
+<p class="text">Контакный номер:</p>
+<a class="number" href="tel:+78432167045">+7&nbsp;(843)&nbsp;216&nbsp;70 45</a></div>
+</div>
+<!-- /top-site__bar -->
+
+<div class="top-site__bar active login" data-ng-show="user.login">
+<div class="top-site__phone">
+<p class="text">Контакный номер:</p>
+<a class="number" href="tel:+78432167045">+7 (843) 216 70 45</a></div>
+</div>
+<!-- /top-site__bar --></div>
+<!-- /wrap --></footer>
+<!-- /bottom-site --><script type="text/ng-template" id="panel-index">
+    <div data-ng-init="panel.title='iSteward'; more();">
+
+        <h1 class="title-bl">Календарь ближайших мероприятий</h1>
+
+        <div class="table-cal">
+
+            <div class="table-cal__header">
+                <div class="table-cal__col c_name">
+                <span
+                    data-ng-click="order('header_base64')"
+                    data-ng-class="{
+                            sortactive: isActive('header_base64'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Название мероприятия</span>
+                </div>
+                <div class="table-cal__col c_date">
+                <span
+                    data-ng-click="order('date_start')"
+                    data-ng-class="{
+                            sortactive: isActive('date_start'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Дата</span>
+                </div>
+                <div class="table-cal__col c_place">
+                <span
+                    data-ng-click="order('place_base64')"
+                    data-ng-class="{
+                            sortactive: isActive('place_base64'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Место проведения</span>
+                </div>
+                <div class="table-cal__col c_amount">
+                <span
+                    data-ng-click="order('sit_place')"
+                    data-ng-class="{
+                            sortactive: isActive('sit_place'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Кол-во мест</span>
+                </div>
+                <div class="table-cal__col c_time">
+                <span
+                    data-ng-click="order('duration')"
+                    data-ng-class="{
+                            sortactive: isActive('duration'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Прод-сть</span>
+                </div>
+                <div class="table-cal__col c_money">
+                <span
+                    data-ng-click="order('salary')"
+                    data-ng-class="{
+                            sortactive: isActive('salary'),
+                            'sort': !reverse,
+                            'sort reverse': reverse}">Гонорар</span>
+                </div>
+            </div>
+            <!-- /table-cal__header -->
+
+            <div class="table-cal__row"
+                 data-ng-repeat="ie in ievents | orderBy: predicate: reverse">
+                <div class="table-cal__col c_name">
+                    <div class="text-wr">
+                        <span class="mob-info">Мероприятие:</span>
+                        <span class="text">{{::ie.header_base64|base64decode|renderHtml|strip_tags}}</span>
+                    </div>
+                </div>
+                <div class="table-cal__col c_date">
+                    <div class="text-wr">
+                    <span class="mob-info">{{::ie.date_start|pgISO8601|date: 'd MMMM yyyy, H:mm'}} -
+                        {{::ie.date_end|pgISO8601|date: 'H:mm'}}</span>
+                        <span class="text">{{::ie.date_start|pgISO8601|date: 'dd.MM.yyyy'}}</span>
+                    </div>
+                </div>
+                <div class="table-cal__col c_place">
+                    <div class="text-wr">
+                        <span class="text">{{::ie.place_base64|base64decode|renderHtml|strip_tags}}</span>
+                    </div>
+                </div>
+                <div class="table-cal__col c_amount">
+                    <div class="text-wr">
+                    <span class="text">{{ie.sit_place}}<span
+                            class="mob-info"> мест</span></span>
+                    </div>
+                </div>
+                <div class="table-cal__col c_time">
+                    <div class="text-wr">
+                        <span class="text">{{::ie.duration | intervalToStr}}</span>
+                    </div>
+                </div>
+                <div class="table-cal__col c_money">
+                    <div class="text-wr">
+                        <span class="mob-info">Гонорар:</span>
+                        <span class="text">{{::ie.salary}}&nbsp;руб.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /table-cal__row -->
+        </div>
+        <!-- /table-cal -->
+
+
+    </div>
+    <div class="table-btn">
+        <div class="btn-wr--center">
+            <a href="#/signup"
+               class="btn-action green"
+               data-ng-cloak
+               data-ng-hide="user.login">Стать стюардом</a>
+        </div>
+        <div class="btn-wr--center" data-ng-show="hasMore">
+            <button class="btn-refresh"
+                    data-ng-class="{'loading': working}"
+                    data-ng-disabled="working"
+                    data-ng-click="more()">Все мероприятия
+            </button>
+        </div>
+    </div>
+</script><script type="text/ng-template" id="login-dialog">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Вход в систему</h4>
+
+            <form class="login-form form-st"
+                  novalidate
+                  data-form-autofocus
+                  data-form-error-focus="login.formErrors">
+
+                <div class="data-field-string"
+                     data-field-title="Логин (контактный телефон)"
+                     data-field-tooltip="79235668911"
+                     data-field-property="{slug: 'username'}"
+                     data-field-model="login.form.username"
+                     data-field-error="login.formErrors.username"></div>
+
+                <div class="data-field-password"
+                     data-field-title="Пароль"
+                     data-field-tooltip="Ваш пароль"
+                     data-field-property="{slug: 'password'}"
+                     data-field-model="login.form.password"
+                     data-field-error="login.formErrors.password"></div>
+
+                <div class="row">
+
+                    <div class="modal__col">
+                        <a href="/#/signup"
+                           class="modal__link"
+                           data-ng-click="closeThisDialog()">Зарегистрироваться</a>
+                    </div>
+                    <!-- /modal__col -->
+
+                    <div class="modal__col">
+                        <a class="modal__link"
+                           style="cursor: pointer;"
+                           data-ng-click="login.passwordReset()">Восстановить пароль</a>
+                    </div>
+                    <!-- /modal__col -->
+
+                </div>
+                <!-- /row -->
+
+                <button type="button"
+                        name="doLogin"
+                        class="btn btn-action green"
+                        data-ng-click="login.do()">Войти
+                </button>
+
+            </form>
+        </div>
+    </div>
+</script><script type="text/ng-template" id="reset-dialog">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Восстановление пароля</h4>
+
+            <form class="reset-form form-st"
+                  novalidate
+                  data-form-autofocus="{{::focusOnFirstElement}}"
+                  data-form-error-focus="passwordReset.formErrors">
+                <div class="data-field-string"
+                     data-ng-show="resetStep == 1"
+                     data-field-title="Логин (контактный телефон)"
+                     data-field-tooltip="79235668911"
+                     data-field-property="{slug: 'username'}"
+                     data-field-model="passwordReset.form.username"
+                     data-field-error="passwordReset.formErrors.username"></div>
+
+                <div class="data-field-password"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Новый пароль"
+                     data-field-tooltip="Новый пароль"
+                     data-field-property="{slug: 'password'}"
+                     data-field-model="passwordReset.form.password"
+                     data-field-error="passwordReset.formErrors.password"></div>
+
+                <div class="data-field-password"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Подтверждение пароля"
+                     data-field-tooltip="Подтверждение пароля"
+                     data-field-property="{slug: 'confirmPassword'}"
+                     data-field-model="passwordReset.form.confirmPassword"
+                     data-field-error="passwordReset.formErrors.confirmPassword"></div>
+
+                <div class="data-field-string"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Кодовое слово"
+                     data-field-tooltip="Введите код сброса пароля из СМС"
+                     data-field-property="{slug: 'code'}"
+                     data-field-model="passwordReset.form.code"
+                     data-field-error="passwordReset.formErrors.code"></div>
+
+                <div class="row top-margin row--btns">
+                    <button class="btn btn-reset" data-ng-click="closeThisDialog()">Отмена</button>
+                    <button type="button"
+                            data-ng-show="resetStep == 1"
+                            data-ng-click="passwordReset.reset()"
+                            class="btn btn-action green">Восстановить
+                    </button>
+                    <button type="button"
+                            name="doConfirm"
+                            class="btn btn-action green"
+                            data-ng-show="resetStep == 2"
+                            data-ng-click="passwordReset.confirm()">Подтвердить
+                    </button>
+                </div>
+                <!-- /row -->
+            </form>
+        </div>
+    </div>
+</script><script type="text/ng-template" id="reset-done">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Ваш пароль успешно изменен</h4>
+
+            <div class="modal__align--center">
+                <div class="row top-margin">
+                    <button type="button"
+                            class="btn-action green"
+                            data-ng-click="closeThisDialog()">OK
+                    </button>
+                </div>
+                <!-- /row -->
+
+            </div>
+
+        </div>
+        <!-- modal__box -->
+    </div><!-- modal -->
+</script><script type="text/ng-template" id="panel-signup">
+    <div class="white-box">
+        <div class="half-bl" data-ng-init="panel.title='Стать стюардом'">
+            <a href="#/events" class="btn--nav back"
+               data-ng-href="{{::main.config.homeUrl}}"><span>Назад</span></a>
+
+            <h1 class="white-box__title">Базовая информация</h1>
+
+            <form name="signupForm" class="form-st" enctype="multipart/form-data"
+                  novalidate
+                  data-form-ng-error
+                  data-form-autofocus="{{::focusOnFirstElement}}"
+                  data-form-error-focus="signup.formErrors">
+
+                <div data-ng-repeat="prop in properties | filter:{required:true}"
+                     data-trigger-repeat-end="{{::focusOnFirstElement}}"
+                     data-field-factory="{{::prop.type_name}}"
+                     data-field-title="{{::prop.title_base64 | base64decode}}"
+                     data-field-tooltip="{{::prop.tooltip_base64 | base64decode}}"
+                     data-field-property="prop"
+                     data-field-preview="signup.getPreview"
+                     data-field-model="signup.form[prop.slug]"
+                     data-field-error="signup.formErrors[prop.slug]">
+                    <div data-ng-show="signupForm.$submitted">
+                            <span class="error-msg"
+                                  data-ng-show="signupForm[prop.slug].$error.required">
+                                &laquo;{{::prop.title_base64 | base64decode}}&raquo; следует заполнить
+                            </span>
+                    </div>
+                </div>
+
+                <div class="data-field-password form-field span-6"
+                     data-ng-hide="createdUser"
+                     data-field-title="Пароль"
+                     data-field-tooltip="Придумайте пароль"
+                     data-field-property="{required: true, slug: 'password'}"
+                     data-field-model="signup.user.password"
+                     data-field-error="signup.formErrors.password">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg" data-ng-show="signupForm.password.$error.required">
+                            &laquo;Пароль&raquo; следует заполнить
+                        </span>
+                    </div>
+                </div>
+
+                <div class="data-field-password form-field span-6"
+                     data-ng-hide="createdUser"
+                     data-field-title="Повторите пароль"
+                     data-field-tooltip="Повторите пароль"
+                     data-field-property="{required: true, slug: 'confirmPassword'}"
+                     data-field-model="signup.user.confirmPassword"
+                     data-field-error="signup.formErrors.confirmPassword">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg"
+                              data-ng-show="signupForm.confirmPassword.$error.required">
+                            &laquo;Повтор пароля&raquo; следует заполнить
+                        </span>
+                    </div>
+                </div>
+
+                <div class="data-field-bool form-field"
+                     data-ng-hide="createdUser"
+                     data-field-title="Согласен (-на) с тем, что оставленная мною информация может быть использована компанией ООО СПОРТ-ГАРД для обработки моего запроса."
+                     data-field-property="{required: true, id:'personal-data', slug:'personalData'}"
+                     data-field-model="signup.user.personalData"
+                     data-field-error="signup.formErrors.personalData">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg"
+                              data-ng-show="signupForm.personalData.$error.required">
+                            Требуется Ваше согласие на обработку персональных данных
+                        </span>
+                    </div>
+                </div>
+
+               <a href="/content/info/privacy_policy.html" target="blank" style="padding-left:30px;">Конфиденциальность</a>
+
+
+                <div class="field-wr two-btns-inrow row" data-ng-hide="user.login">
+                    <button type="button" class="btn btn-reset"
+                            data-ng-disabled="working"
+                            data-ng-click="signup.reset()">Очистить
+                    </button>
+
+                    <button type="submit"
+                            class="btn btn-action blue"
+                            data-ng-disabled="working"
+                            data-ng-class="{'loading': working}"
+                            data-ng-click="signup.do()">Сохранить
+                    </button>
+                </div>
+                <!-- /field-wr -->
+
+            </form>
+        </div>
+        <!-- /cabinet__content__col -->
+        <!-- /whtie-box -->
+    </div>
+</script><script type="text/ng-template" id="signup-done">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Ваша заявка отправлена</h4>
+
+            <div class="modal__align--center">
+
+                <p class="text-center" style="margin-top: 15px;">
+                    Ваша заявка отправлена! В течение 3-х рабочих дней по указанному номеру с Вами
+                    свяжется наш администратор и сообщит время и место собеседования.
+                </p>
+
+                <div class="row top-margin">
+                    <button type="button"
+                            class="btn-action green"
+                            data-ng-click="closeThisDialog()">OK
+                    </button>
+                </div>
+                <!-- /row -->
+
+            </div>
+
+        </div>
+        <!-- modal__box -->
+    </div><!-- modal -->
+</script><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter33835359 = new Ya.Metrika({
+                    id:33835359,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33835359" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --><!-- BEGIN JIVOSITE CODE {literal} --><script type='text/javascript'>
+(function(){ var widget_id = 'ady4rzu4LL';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script><!-- {/literal} END JIVOSITE CODE -->
+<script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.2/angular-locale_ru.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/js/ngDialog.min.js"></script>
+<script src="/js/icarousel.js"></script>
+<script src="/app/index.html/app.js"></script>
+<script src="/app/index.html/dialogs.js"></script>
+<script src="/app/index.html/controllers.js"></script>
+<script src="/app/modules/utils.js"></script>
+<script src="/app/modules/services.js"></script>
+<script src="/app/modules/filters.js"></script>
+<script src="/app/modules/directives.js"></script></body>
+</html>

@@ -1,0 +1,59 @@
+.white-box {
+    background: url(../img/sw-bg.jpg) no-repeat left;
+    background-size: cover;
+}
+
+.white-box__title {
+    font-size: 32px;
+}
+
+.stage-work img {
+    width: 65px;
+}
+
+.stage-work .stage1,
+.stage-work .stage2,
+.stage-work .stage3,
+.stage-work .stage4,
+.stage-work .stage5 {
+    display: flex;
+}
+
+.stage-work .stage-text {
+    width: 400px;
+    padding-top: 5px;
+    padding-left: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.stage-work .stage-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.stage-work p {
+    font-size: 15px;
+    color: #1A1A1A;
+    line-height: 21px;
+    padding-top: 5px;
+}
+
+.stage-work .stage2 {
+    padding-top: 180px;
+    padding-left: 198px;
+}
+
+.stage-work .stage3 {
+    padding-top: 60px;
+    padding-left: 530px;
+}
+
+.stage-work .stage4 {
+    padding-top: 60px;
+    padding-left: 75px;
+}
+
+.stage-work .stage5 {
+    padding-top: 190px;
+    padding-left: 460px;
+}

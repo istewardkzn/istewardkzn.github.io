@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru"
+      data-ng-app="isteward"
+      data-ng-controller="IndexPageController as main">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="favicon.ico" type=image/x-icon rel=icon>
+
+    <title>Обратная связь</title>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="LYpiEeA71V_75tQP0kIubxR0HgdnLGVMWj9JxjEAYmxI0zF8lUmgL9aopEWzO2pcRBNWbQl-VxgPejOKHDAKIg==">
+    <meta name="description" content="">
+<meta name="keywords" content="">
+<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/css/ngDialog.min.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/css/ngDialog-theme-default.min.css" rel="stylesheet">
+<link href="/css/00-reset.css" rel="stylesheet">
+<link href="/css/01-frontend.css" rel="stylesheet">
+<link href="/css/03-frontend_adaptive.css" rel="stylesheet">
+<script src="/app/config.js"></script></head>
+<body>
+
+<div id="wrapper" class="top-bg">
+
+    <header class="top-site float">
+        <div class="wrap" data-ng-cloak>
+            <a href="/" class="logo" data-ng-href="{{::main.config.homeUrl}}">&nbsp;</a>
+
+            <div class="top-site__bar active anonymous ng-hide"
+                 data-ng-hide="user.login">
+                <button class="btn--trans"
+                        data-ng-click="main.openLogin('Вход в систему')">Вход в систему
+                </button>
+
+                <div class="top-site__phone">
+                    <p class="text">Контакный номер:</p>
+                    <a href="tel:+78432167045"
+                       class="number">+7&nbsp;(843)&nbsp;216&nbsp;70&nbsp;45</a>
+                </div>
+
+            </div>
+            <!-- /top-site__bar -->
+
+            <div class="top-site__bar active ng-hide"
+                 data-ng-show="user.login">
+                <button class="btn-logout" data-ng-click="main.logout()">Выход</button>
+
+                <div class="profile">
+                    <div class="img-wr">
+                        <img data-ng-src="{{form.avatar_url}}"
+                             src="/img/avatar-empty.jpg" alt="user avatar">
+                    </div>
+
+                    <div class="profile__text">
+                        <p class="profile__name">
+                            <a href="/cabinet.html#/events"
+                               data-ng-bind-template="{{form.first_name}} {{form.last_name}}">
+                                &nbsp;</a>
+                        </p>
+
+                        <p class="form__status" data-ng-bind="form.status_label"></p>
+                    </div>
+
+                </div>
+                <!-- /profile -->
+            </div>
+            <!-- /top-site__bar -->
+
+        </div>
+        <!-- /wrap -->
+    </header>
+    <!-- /top-site -->
+
+    <a href="/" class="logo--page"
+       data-ng-href="{{::main.config.homeUrl}}">&nbsp;</a>
+
+    <div class="content">
+        <div class="wrap">
+            
+    <div class="page-buttons three">
+                    <a href="/content/info/fifa2018.html"
+               class="item ">
+                <span class="icon st-1"></span>
+
+                <span class="title">Спортивные мероприятия</span>
+            </a>
+                    <a href="/content/info/stagework.html"
+               class="item ">
+                <span class="icon st-2"></span>
+
+                <span class="title">Этапы работы</span>
+            </a>
+                    <a href="/content/info/callback.html"
+               class="item active">
+                <span class="icon st-3"></span>
+
+                <span class="title">Наши проекты</span>
+            </a>
+            </div>
+    <!-- /page-buttons -->
+            <!-- /page-buttons -->
+            <div class="white-box">
+                <div class="our-projects">
+                    <h1 class="white-box__title">Наши проекты</h1>
+                    <div class="list-gallery">
+                        <div class="list">
+                            <ul>
+                                <li>XVI Чемпионат мира FINA по плаванию</li>
+                                <li>Чемпионат России по плаванию на короткой воде</li>
+                                <li>Кубок Президента Российской Федерации по тяжелой атлетике</li>
+                                <li>Чемпионат Европы по дзюдо</li>
+                                <li>Чемпионат Европы по самбо</li>
+                                <li>Финал Кубка России по футболу, «Зенит»-«ЦСКА»</li>
+                                <li>Чемпионат Европы по регби-7</li>
+                                <li>Финал конкурса «Российская студенческая весна»</li>
+                                <li>Чемпионат мира по художественной гимнастике</li>
+                                <li>Чемпионат мира по тхэквон-до</li>
+                                <li>Исторический фестиваль «Великий Болгар-2016»</li>
+                                <li>Чемпионат мира по кёрлингу</li>
+                                <li>Жеребьёвка Кубка Конфедераций FIFA 2017</li>
+                                <li>Баскетбольный матч «Црвена» - «УНИКС»</li>
+                                <li>Чемпионат мира по тайскому боксу</li>
+                                <li>Кубок мира по хоккею среди молодежных команд</li>
+                                <li>Чемпионат мира по борьбе на поясах</li>
+                                <li>Чемпионат России по прыжкам в воду</li>
+                                <li>Товарищеский матч «Филадельфия Флайерз»</li>
+                                <li>Футбольный матч «Рубин»-«Уфа»</li>
+                                <li>Футбольный матч «Рубин»-«ЦСКА»</li>
+                                <li>Кубок Конфедераций FIFA 2017</li>
+                                <li>Городской «Казанский марафон»</li>
+                                <li>Международный фестиваль Школы танцев А. Духовой «Тодес»</li>
+                                <li>Чемпионат Европы по регби-7</li>
+                                <li>Первенство Европы по волейболу</li>
+                                <li>Исторический фестиваль «Великий Болгар-2017»</li>
+                                <li>III Всероссийские пляжные игры</li>
+                                <li>Этап Чемпионата мира Red Bull Air Race</li>
+                                <li>МИНЭПС VI</li>
+                                <li>XIV Чемпионат мира по спортивному ушу</li>
+                                <li>Кубок Президента Республики Татарстан по самбо</li>
+                                <li>Товарищеский матч «Россия»-«Иран»</li>
+                                <li>VI Республиканский ифтар для мужчин</li>
+                                <li>Чемпионат мира по футболу FIFA 2018</li>
+                                <li>Mad Wave Challenge</li>
+                                <li>Исторический фестиваль «Великий Болгар-2018»</li>
+                                <li>Этап Чемпионата мира Red Bull Air Race</li>
+                                <li>Кубок Президента Республики Татарстан по самбо</li>
+                                <li>Эстафета огня Всемирной зимней Универсиады 2019 г. в г. Красноярск</li>
+                                <li>Матчи футбольного клуба «Рубин» сезон 2018-2019</li>
+                            </ul>
+                        </div>
+                        <div class="gallery">
+                            <div class="carousel-box" data-is-carousel="" data-is-cycle-direction="ltr" data-is-scrolling-time="0.5" data-is-viewing-time="5">
+                            <div class="scene">
+                            <div class="filmstrip">
+                            <!-- Картинка в галереи -->
+                            <div class="slide">
+                            <div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s2_l8v1a_85o0d.jpg')">
+                            </div>
+                            </div>
+                            <!-- Картинка в галереи -->
+                            <div class="slide">
+                            <div class="slide-wrap" style="background-image: url('https://disk.isteward.ru/upload/2016/09/s1_rshkw.jpg')">
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            
+                            <div class="indicators"><span class="default" data-ng-class="{'active': $parent.$parent.currentIndex==slideIndex}" data-ng-repeat="(slideIndex, s) in $parent.sliders"></span></div>
+                            
+                            <div class="is-carousel-controls"><span class="is-carousel-control is-carousel-control-prev" data-ng-click="$parent.previousSlide()"></span> <span class="is-carousel-control is-carousel-control-next" data-ng-click="$parent.nextSlide()"></span></div>
+                            </div>
+                            <video controls src="https://www.youtube.com/watch?v=aJOTlE1K90k"></video>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="white-box__title">Наши контакты</h1>
+
+<div class="row content-text">
+<div class="col"><img alt="" class="full-width" src="https://disk.isteward.ru/upload/2016/09/contactimg5_jxKV.jpg" /></div>
+
+<div class="col">
+<p>Контактный номер:</p>
+
+<p><strong>По вопросам отбора </strong>&nbsp;<a class="feedback__phone" href="tel:8800200500">216 70 45</a></p>
+
+<p><strong>По вопросам подготовки</strong> 216 72 05</p>
+
+<p><strong>По вопросам сотрудничества</strong> 216 46 55</p>
+
+<p>Адрес: <span class="bold">г. Казань, ул. Парижской Коммуны, 26, 3 этаж (БЦ &quot;Легенда&quot;)</span></p>
+
+<p><u>recrut</u><a href="https://e.mail.ru/compose/?mailto=mailto%3arecrut@isteward.ru" rel="noopener" target="_blank">@isteward.ru</a></p>
+</div>
+</div>
+<!-- /row --><!-- /feedback__content-->
+
+<div id="map-canvas"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aae7c172ad549696d28223f9de2390a7eed62e66305f5e1ab2ead519e2d14c45f&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script></div>
+            </div>
+            <!-- /white-box -->
+        </div>
+        <!-- /wrap -->
+    </div>
+    <!-- /content -->
+</div>
+<!-- /wrapper -->
+
+<script type="text/ng-template" id="login-dialog">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Вход в систему</h4>
+
+            <form class="login-form form-st"
+                  novalidate
+                  data-form-autofocus
+                  data-form-error-focus="login.formErrors">
+
+                <div class="data-field-string"
+                     data-field-title="Логин (контактный телефон)"
+                     data-field-tooltip="79235668911"
+                     data-field-property="{slug: 'username'}"
+                     data-field-model="login.form.username"
+                     data-field-error="login.formErrors.username"></div>
+
+                <div class="data-field-password"
+                     data-field-title="Пароль"
+                     data-field-tooltip="Ваш пароль"
+                     data-field-property="{slug: 'password'}"
+                     data-field-model="login.form.password"
+                     data-field-error="login.formErrors.password"></div>
+
+                <div class="row">
+
+                    <div class="modal__col">
+                        <a href="/#/signup"
+                           class="modal__link"
+                           data-ng-click="closeThisDialog()">Зарегистрироваться</a>
+                    </div>
+                    <!-- /modal__col -->
+
+                    <div class="modal__col">
+                        <a class="modal__link"
+                           style="cursor: pointer;"
+                           data-ng-click="login.passwordReset()">Восстановить пароль</a>
+                    </div>
+                    <!-- /modal__col -->
+
+                </div>
+                <!-- /row -->
+
+                <button type="button"
+                        name="doLogin"
+                        class="btn btn-action green"
+                        data-ng-click="login.do()">Войти
+                </button>
+
+            </form>
+        </div>
+    </div>
+</script><script type="text/ng-template" id="reset-dialog">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Восстановление пароля</h4>
+
+            <form class="reset-form form-st"
+                  novalidate
+                  data-form-autofocus="{{::focusOnFirstElement}}"
+                  data-form-error-focus="passwordReset.formErrors">
+                <div class="data-field-string"
+                     data-ng-show="resetStep == 1"
+                     data-field-title="Логин (контактный телефон)"
+                     data-field-tooltip="79235668911"
+                     data-field-property="{slug: 'username'}"
+                     data-field-model="passwordReset.form.username"
+                     data-field-error="passwordReset.formErrors.username"></div>
+
+                <div class="data-field-password"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Новый пароль"
+                     data-field-tooltip="Новый пароль"
+                     data-field-property="{slug: 'password'}"
+                     data-field-model="passwordReset.form.password"
+                     data-field-error="passwordReset.formErrors.password"></div>
+
+                <div class="data-field-password"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Подтверждение пароля"
+                     data-field-tooltip="Подтверждение пароля"
+                     data-field-property="{slug: 'confirmPassword'}"
+                     data-field-model="passwordReset.form.confirmPassword"
+                     data-field-error="passwordReset.formErrors.confirmPassword"></div>
+
+                <div class="data-field-string"
+                     data-ng-show="resetStep == 2"
+                     data-field-title="Кодовое слово"
+                     data-field-tooltip="Введите код сброса пароля из СМС"
+                     data-field-property="{slug: 'code'}"
+                     data-field-model="passwordReset.form.code"
+                     data-field-error="passwordReset.formErrors.code"></div>
+
+                <div class="row top-margin row--btns">
+                    <button class="btn btn-reset" data-ng-click="closeThisDialog()">Отмена</button>
+                    <button type="button"
+                            data-ng-show="resetStep == 1"
+                            data-ng-click="passwordReset.reset()"
+                            class="btn btn-action green">Восстановить
+                    </button>
+                    <button type="button"
+                            name="doConfirm"
+                            class="btn btn-action green"
+                            data-ng-show="resetStep == 2"
+                            data-ng-click="passwordReset.confirm()">Подтвердить
+                    </button>
+                </div>
+                <!-- /row -->
+            </form>
+        </div>
+    </div>
+</script><script type="text/ng-template" id="reset-done">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Ваш пароль успешно изменен</h4>
+
+            <div class="modal__align--center">
+                <div class="row top-margin">
+                    <button type="button"
+                            class="btn-action green"
+                            data-ng-click="closeThisDialog()">OK
+                    </button>
+                </div>
+                <!-- /row -->
+
+            </div>
+
+        </div>
+        <!-- modal__box -->
+    </div><!-- modal -->
+</script><script type="text/ng-template" id="panel-signup">
+    <div class="white-box">
+        <div class="half-bl" data-ng-init="panel.title='Стать стюардом'">
+            <a href="#/events" class="btn--nav back"
+               data-ng-href="{{::main.config.homeUrl}}"><span>Назад</span></a>
+
+            <h1 class="white-box__title">Базовая информация</h1>
+
+            <form name="signupForm" class="form-st" enctype="multipart/form-data"
+                  novalidate
+                  data-form-ng-error
+                  data-form-autofocus="{{::focusOnFirstElement}}"
+                  data-form-error-focus="signup.formErrors">
+
+                <div data-ng-repeat="prop in properties | filter:{required:true}"
+                     data-trigger-repeat-end="{{::focusOnFirstElement}}"
+                     data-field-factory="{{::prop.type_name}}"
+                     data-field-title="{{::prop.title_base64 | base64decode}}"
+                     data-field-tooltip="{{::prop.tooltip_base64 | base64decode}}"
+                     data-field-property="prop"
+                     data-field-preview="signup.getPreview"
+                     data-field-model="signup.form[prop.slug]"
+                     data-field-error="signup.formErrors[prop.slug]">
+                    <div data-ng-show="signupForm.$submitted">
+                            <span class="error-msg"
+                                  data-ng-show="signupForm[prop.slug].$error.required">
+                                &laquo;{{::prop.title_base64 | base64decode}}&raquo; следует заполнить
+                            </span>
+                    </div>
+                </div>
+
+                <div class="data-field-password form-field span-6"
+                     data-ng-hide="createdUser"
+                     data-field-title="Пароль"
+                     data-field-tooltip="Придумайте пароль"
+                     data-field-property="{required: true, slug: 'password'}"
+                     data-field-model="signup.user.password"
+                     data-field-error="signup.formErrors.password">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg" data-ng-show="signupForm.password.$error.required">
+                            &laquo;Пароль&raquo; следует заполнить
+                        </span>
+                    </div>
+                </div>
+
+                <div class="data-field-password form-field span-6"
+                     data-ng-hide="createdUser"
+                     data-field-title="Повторите пароль"
+                     data-field-tooltip="Повторите пароль"
+                     data-field-property="{required: true, slug: 'confirmPassword'}"
+                     data-field-model="signup.user.confirmPassword"
+                     data-field-error="signup.formErrors.confirmPassword">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg"
+                              data-ng-show="signupForm.confirmPassword.$error.required">
+                            &laquo;Повтор пароля&raquo; следует заполнить
+                        </span>
+                    </div>
+                </div>
+
+                <div class="data-field-bool form-field"
+                     data-ng-hide="createdUser"
+                     data-field-title="Согласен (-на) с тем, что оставленная мною информация может быть использована компанией ООО СПОРТ-ГАРД для обработки моего запроса."
+                     data-field-property="{required: true, id:'personal-data', slug:'personalData'}"
+                     data-field-model="signup.user.personalData"
+                     data-field-error="signup.formErrors.personalData">
+                    <div data-ng-show="signupForm.$submitted">
+                        <span class="error-msg"
+                              data-ng-show="signupForm.personalData.$error.required">
+                            Требуется Ваше согласие на обработку персональных данных
+                        </span>
+                    </div>
+                </div>
+
+               <a href="/content/info/privacy_policy.html" target="blank" style="padding-left:30px;">Конфиденциальность</a>
+
+
+                <div class="field-wr two-btns-inrow row" data-ng-hide="user.login">
+                    <button type="button" class="btn btn-reset"
+                            data-ng-disabled="working"
+                            data-ng-click="signup.reset()">Очистить
+                    </button>
+
+                    <button type="submit"
+                            class="btn btn-action blue"
+                            data-ng-disabled="working"
+                            data-ng-class="{'loading': working}"
+                            data-ng-click="signup.do()">Сохранить
+                    </button>
+                </div>
+                <!-- /field-wr -->
+
+            </form>
+        </div>
+        <!-- /cabinet__content__col -->
+        <!-- /whtie-box -->
+    </div>
+</script><script type="text/ng-template" id="signup-done">
+    <div class="modal">
+        <div class="modal__box">
+            <h4 class="modal__title">Ваша заявка отправлена</h4>
+
+            <div class="modal__align--center">
+
+                <p class="text-center" style="margin-top: 15px;">
+                    Ваша заявка отправлена! В течение 3-х рабочих дней по указанному номеру с Вами
+                    свяжется наш администратор и сообщит время и место собеседования.
+                </p>
+
+                <div class="row top-margin">
+                    <button type="button"
+                            class="btn-action green"
+                            data-ng-click="closeThisDialog()">OK
+                    </button>
+                </div>
+                <!-- /row -->
+
+            </div>
+
+        </div>
+        <!-- modal__box -->
+    </div><!-- modal -->
+</script><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter33835359 = new Ya.Metrika({
+                    id:33835359,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33835359" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --><!-- BEGIN JIVOSITE CODE {literal} --><script type='text/javascript'>
+(function(){ var widget_id = 'ady4rzu4LL';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script><!-- {/literal} END JIVOSITE CODE -->
+<footer class="bottom-site">
+    <div class="wrap">
+        <a href="/" class="logo">&nbsp;</a>
+
+        <div class="top-site__bar active anonymous" data-ng-hide="user.login">
+            <a href="#" class="btn--trans"
+               data-ng-click="main.openLogin('Вход в систему')">Вход в систему</a>
+
+            <div class="top-site__phone">
+                <p class="text">Контакный номер:</p>
+                <a href="tel:+78432167045" class="number">+7&nbsp;(843)&nbsp;216&nbsp;70&nbsp;45</a>
+            </div>
+
+        </div>
+        <!-- /top-site__bar -->
+
+        <div class="top-site__bar active login" data-ng-show="user.login">
+            <div class="top-site__phone">
+                <p class="text">Контакный номер:</p>
+                <a href="tel:+78432167045" class="number">+7&nbsp;(843)&nbsp;216&nbsp;70&nbsp;45</a>
+            </div>
+        </div>
+        <!-- /top-site__bar -->
+
+    </div>
+    <!-- /wrap -->
+</footer>
+<!-- /bottom-site -->
+
+<script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.2/angular-locale_ru.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.1/js/ngDialog.min.js"></script>
+<script src="/js/icarousel.js"></script>
+<script src="/app/article.html/app.js"></script>
+<script src="/app/article.html/training.js"></script>
+<script src="/app/index.html/app.js"></script>
+<script src="/app/index.html/dialogs.js"></script>
+<script src="/app/index.html/controllers.js"></script>
+<script src="/app/modules/utils.js"></script>
+<script src="/app/modules/services.js"></script>
+<script src="/app/modules/filters.js"></script>
+<script src="/app/modules/directives.js"></script></body>
+</html>

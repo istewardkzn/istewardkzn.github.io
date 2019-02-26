@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>geo_fence</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main" transform="translate(-262.000000, -656.000000)" fill="#000000">
+            <g id="Group-23" transform="translate(100.000000, 638.000000)">
+                <g id="geo_fence" transform="translate(162.000000, 18.000000)">
+                    <path d="M18.619,16.457 C18.538,16.538 18.456,16.619 18.375,16.698 C17.828,17.237 17.32,17.742 16.911,18.222 C21.523,18.765 24,20.188 24,21 C24,22.019 20.117,24 13,24 C5.883,24 2,22.019 2,21 C2,20.188 4.477,18.765 9.089,18.222 C8.679,17.742 8.171,17.237 7.625,16.698 C7.545,16.619 7.463,16.538 7.381,16.457 C3.226,17.167 0,18.696 0,21 C0,24.282 6.54,26 13,26 C19.46,26 26,24.282 26,21 C26,18.696 22.774,17.167 18.619,16.457 Z" id="Path"></path>
+                    <path d="M13,0 C8.582,0 5,3.582 5,8 C5,14 12,16 12,20 C12,20.552 12.448,21 13,21 C13.552,21 14,20.552 14,20 C14,16 21,14 21,8 C21,3.582 17.418,0 13,0 Z M13,10 C11.895,10 11,9.105 11,8 C11,6.895 11.895,6 13,6 C14.105,6 15,6.895 15,8 C15,9.105 14.105,10 13,10 Z" id="Shape" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
